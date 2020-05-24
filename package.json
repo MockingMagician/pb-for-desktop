@@ -91,94 +91,10 @@
   "postinstall": "electron-builder install-app-deps",
   "scripts": {
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "build": "node ./node_modules/@sidneys/electron-build/index.js",
-    "deploy": "node ./node_modules/@sidneys/electron-deploy-github/index.js",
-    "docs": "./node_modules/.bin/jsdoc --configure ./.jsdoc.json",
-    "localsetup": "node ./node_modules/@sidneys/electron-localsetup/index.js",
-    "releasenotes": "node ./node_modules/@sidneys/releasenotes/index.js",
-    "start": "./node_modules/.bin/electron ./app/scripts/app.js"
+    "dist": "electron-builder"
   },
   "build": {
     "appId": "fr.mocking-magician.pb-for-desktop",
-    "productName": "PB for Desktop",
-    "asar": true,
-    "asarUnpack": [
-      "sounds"
-    ],
-    "compression": "maximum",
-    "directories": {
-      "buildResources": "./build/staging",
-      "output": "./build/output"
-    },
-    "files": [
-      "!.appveyor.yml",
-      "!.babelrc",
-      "!.editorconfig",
-      "!.eslintignore",
-      "!.eslintrc",
-      "!.github/**",
-      "!.gitignore",
-      "!.npmignore",
-      "!.travis.yml",
-      "!build/**",
-      "!gh-pages/**",
-      "!resources/**",
-      "!website/**"
-    ],
-    "mac": {
-      "target": [
-        "dir",
-        "dmg",
-        "zip"
-      ],
-      "artifactName": "${name}-${version}-${os}.${ext}",
-      "icon": "./icons/mac/icon.icns",
-      "category": "public.app-category.utilities",
-      "darkModeSupport": true
-    },
-    "dmg": {
-      "artifactName": "${name}-${version}.${ext}",
-      "background": "./resources/setup/dmg-background.png",
-      "icon": "./resources/setup/dmg-icon.icns"
-    },
-    "win": {
-      "target": [
-        "nsis",
-        "msi",
-        "portable"
-      ],
-      "icon": "./icons/win/icon.ico"
-    },
-    "nsis": {
-      "artifactName": "${name}-${version}-setup.${ext}",
-      "oneClick": false,
-      "runAfterFinish": true,
-      "allowToChangeInstallationDirectory": true,
-      "deleteAppDataOnUninstall": false,
-      "menuCategory": "PB for Desktop",
-      "installerHeader": "./resources/setup/nsis-installer-header.bmp",
-      "installerHeaderIcon": "./resources/setup/nsis-installer-header-icon.ico",
-      "installerIcon": "./resources/setup/nsis-installer-icon.ico",
-      "installerSidebar": "./resources/setup/nsis-installer-sidebar.bmp"
-    },
-    "msi": {
-      "artifactName": "${name}-${version}-setup.${ext}"
-    },
-    "portable": {
-      "artifactName": "${name}-${version}-portable.${ext}"
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb",
-        "pacman",
-        "rpm",
-        "snap"
-      ],
-      "artifactName": "${name}-${version}-${arch}.${ext}",
-      "icon": "./icons/linux/png",
-      "category": "Utility"
-    }
+    "productName": "PB for Desktop"
   }
 }
