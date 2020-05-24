@@ -32,3 +32,5 @@ build
 
 # Generated documentation
 RELEASENOTES.md
+
+/dist
